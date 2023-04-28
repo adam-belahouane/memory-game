@@ -1,38 +1,741 @@
 .App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-div {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.header-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.main-title {
+  all: unset;
+  font-size: 24px;
+  font-weight: 700;
+  color: #152938;
+  margin: 0;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-div > .btn-1:last-child {
+  margin-left: 16px;
+}
+
+.btn-1 {
+  all: unset;
+  border-radius: 26px;
+  padding: 14px 28px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.orange-theme {
+  background-color: #fda214;
+  color: white;
+}
+
+.dark-theme {
+  background-color: #dfe7ec;
+  color: #304859;
+}
+
+.home-theme {
+  background-color: #bcced9;
+  color: #fcfcfc;
+  flex: 1;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.selected-btn {
+  background-color: #304859;
+  color: #fcfcfc;
+  flex: 1;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.start-btn {
+  all: unset;
+  border-radius: 26px;
+  padding: 12px 18.5px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  background-color: #fda214;
+  color: #fcfcfc;
+  margin-top: 32px;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 11px;
+  margin-bottom: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.num-of-players-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 11px;
+  margin-bottom: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.num-of-players-div > button:nth-child(0) {
+  margin-left: 10px;
+}
+
+.grid-selection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 11px;
+}
+
+.big-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 10px;
+  margin: 70px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  margin: 70px;
+}
+
+.memory-card {
+  width: 118px;
+  height: 118px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #304859;
+  font-size: 56px;
+  font-weight: bold;
+  color: white;
+}
+
+.small {
+  width: 47px;
+  height: 47px;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.correct {
+  background-color: #bcced9;
+}
+
+.selected {
+  background-color: #fda214;
+}
+
+.timer-moves-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+}
+
+.bottom-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 255px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #dfe7ec;
+}
+
+.bottom-con > h2 {
+  margin: 0;
+  font-size: 15px;
+  color: #7191a5;
+}
+
+.bottom-con > div {
+  font-size: 24px;
+  color: #304859;
+  font-weight: 700;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90vw;
+  text-align: center;
+  font-size: 18px !important;
+  box-sizing: border-box;
+}
+
+.modal-content > button {
+  margin-bottom: 16px;
+}
+
+.modal-content > button:last-child {
+  margin: 0;
+}
+
+.home {
+  background-color: #152938;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.home > h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 32px;
+  color: #fcfcfc;
+  margin-bottom: 40px;
+}
+
+.start-game-div {
+  background-color: #fcfcfc;
+  padding: 20px;
+  max-width: 90vw;
+  width: 80%;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.start-game-div > h3 {
+  all: unset;
+  color: #7191a5;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 11px;
+}
+
+.win-modal-title {
+  all: unset;
+  font-size: 24px;
+  font-weight: bold;
+  color: #152938;
+  margin: 10px 0;
+}
+
+.win-modal-subtitle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #7191a5;
+  line-height: 17px;
+  margin-bottom: 24px;
+}
+
+.player-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #dfe7ec;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+
+.player {
+  display: flex;
+  color: var(--Font-color-1);
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.num-of-pairs {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--Font-color-2);
+}
+
+:root {
+  --Font-color-1: #7191a5;
+  --Font-color-2: #303030;
+}
+
+.winner {
+  background-color: #152938;
+  --Font-color-1: white;
+  --Font-color-2: white;
+}
+
+.outer-player-div {
+  margin-top: 26px;
+  margin-bottom: 14px;
+}
+
+.user-div {
+  padding: 10px 14px;
+  background-color: #dfe7ec;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.user-div > h3 {
+  all: unset;
+  font-size: 15px;
+  color: #7191a5;
+  font-weight: bold;
+}
+
+.user-div > div {
+  font-size: 24px;
+  font-weight: bold;
+  color: #304859;
+}
+
+.user-div-con {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex: 1;
+  margin-right: 24px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #fda214 transparent;
+}
+
+.white {
+  border-color: transparent transparent white transparent;
+}
+
+.playing {
+  background-color: #fda214;
+  color: #fcfcfc;
+}
+
+.timer-moves-div > .user-div-con:last-child {
+  margin: 0;
+}
+
+.timer-moves-div > .bottom-con:last-child {
+  margin-left: 25px;
+}
+
+.win-modal-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: #dfe7ec;
+  border-radius: 5px;
+}
+
+.win-modal-div > h3 {
+  margin: 0;
+  color: #7191a5;
+  font-size: 13px;
+}
+
+.win-modal-div > div {
+  color: #304859;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.win-modal-div:nth-of-type(3) {
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.modal-btn-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-btn-div > button:last-child {
+  margin-top: 16px;
+}
+
+.btn-1:hover {
+  background-color: #6395b8;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.orange-theme:hover {
+  background-color: #ffb84a;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.start-btn:hover {
+  background-color: #ffb84a;
+}
+
+.memory-card:hover {
+  background-color: #6395b8;
+}
+
+@media (max-width: 767px) {
+  .game-div {
+    width: 87.5vw;
+    margin: 24px 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header-div {
+    width: 100%;
   }
+
+  .big-grid {
+    margin-top: 80px;
+    margin-bottom: 100px;
+  }
+
+  .grid {
+    margin-top: 80px;
+    margin-bottom: 100px;
+    width: 327px;
+    height: 327px;
+  }
+
+  .gap {
+    gap: 13px;
+  }
+
+  .memory-card {
+    width: 73px;
+    height: 73px;
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .small {
+    width: 47px;
+    height: 47px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .bottom-con {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 151px;
+    border-radius: 5px;
+    padding: 10px 0;
+  }
+
+  .btn-1 {
+    border-radius: 26px;
+    padding: 10px 18.5px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: 767px) {
+  .win-modal-title {
+    font-size: 48px;
+    line-height: 60px;
+    margin-bottom: 16px;
+  }
+
+  .win-modal-subtitle {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 40px;
+  }
+
+  .win-modal-div {
+    padding: 25px 32px;
+  }
+
+  .win-modal-div > h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .win-modal-div > div {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .modal-content > .win-modal-div:last-of-type {
+    margin-top: 16px;
+    margin-bottom: 40px;
+  }
+
+  .modal-content {
+    padding: 56px;
+  }
+
+  .modal-btn-div > button {
+    width: 100%;
+  }
+
+  .modal-btn-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  .modal-btn-div > button:last-child {
+    margin-top: 0;
+    margin-left: 14px;
+  }
+
+  .home .btn-1 {
+    font-size: 26px;
+    padding: 9px;
+  }
+
+  .home > h1 {
+    margin-bottom: 78px;
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .start-btn {
+    font-size: 32px;
+    line-height: 40px;
+    padding: 16px;
+    border-radius: 35px;
+  }
+
+  .start-game-div {
+    padding: 56px;
+    border-radius: 20px;
+  }
+
+  .theme {
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
+  .home-theme {
+    margin-left: 30px;
+  }
+
+  .selected-btn {
+    margin-left: 30px;
+  }
+
+  .num-of-players-div > button {
+    margin-left: 22px;
+  }
+
+  .main-title {
+    font-size: 40px;
+
+  }
+
+  .btn-1 {
+    padding: 12px 28px;
+  }
+
+  .header-div {
+    width: 90%;
+  }
+
+  .timer-moves-div {
+    width: 90%;
+  }
+
+  .grid {
+    margin-bottom: 118px;
+    margin-top: 157px;
+    gap: 20px;
+  }
+
+  .user-div {
+    border-radius: 10px;
+    align-items: flex-start;
+  }
+
+  .user-div-con {
+    margin-right: 11px;
+  }
+
+  .small {
+    width: 82px;
+    height: 82px;
+  }
+
+  .big-grid {
+    gap: 16px;
+    margin-top: 120px;
+    margin-bottom: 110px;
+  }
+
+  .bottom-con {
+    padding: 16px;
+  }
+
+  .player-div {
+    margin-bottom: 16px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .modal-content {
+    width: 40%;
+  }
+
+  .start-game-div {
+    width: 50%;
+  }
+
+  .header-div {
+    width: 80%;
+  }
+
+  .timer-moves-div {
+    width: 80%;
+  }
+
+  .user-div-con {
+    margin-right: 30px;
+  }
+
+  .big-grid {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .grid {
+    margin-bottom: 100px;
+    margin-top: 100px;
+  }
+
+  .player {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .num-of-pairs {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .player-div {
+    padding: 17px 32px;
+  }
+}
+
+@media (max-height: 850px) {
+  .btn-1 {
+    font-size: 16px !important;
+    padding: 6px 14px;
+  }
+
+  .grid {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    gap: 10px;
+  }
+
+  .main-title {
+    font-size: 30px;
+  }
+
+  .memory-card {
+    height: 80px;
+    width: 80px;
+    font-size: 40px;
+  }
+
+  .small {
+    height: 60px;
+    width: 60px;
+    font-size: 30px;
+  }
+
+  .big-grid {
+    gap: 8px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+  }
+
+  .game-div {
+    margin: 1vh;
+  }
+
+  .home > h1 {
+    margin-bottom: 50px;
+    font-size: 32px;
+  }
+
+  .start-game-div{
+    padding: 30px;
+    width: 40%;
+  }
+
+  .start-btn {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .user-div > h3 {
+    font-size: 10px;
+  }
+
+  .user-div > div {
+    font-size: 16px;
+  }
+
 }
